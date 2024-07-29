@@ -1,3 +1,4 @@
+// Function for when a bookmark is created
 function onBookmarkCreated(id, bookmark) {
     chrome.bookmarks.getTree((bookmarkTreeNodes) => {
         for (let node of bookmarkTreeNodes) {
@@ -20,8 +21,10 @@ function iterateBookmarks(bookmarkNode, bookmark) {
     } else {
         const bookmarkUrl = bookmark.url.lastIndexOf(".");
         const url = bookmarkNode.url.lastIndexOf(".")
+        // Compare two urls
         if (bookmarkNode.url.substring(0, url) === bookmark.url.substring(0, bookmarkUrl) &&
             bookmarkNode.id !== bookmark.id) {
+            // Create notification
             chrome.notifications.create({
                 type: "basic",
                 iconUrl: chrome.runtime.getURL("Boo_Island_Tour.png"),
