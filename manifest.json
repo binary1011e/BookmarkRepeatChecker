@@ -10,7 +10,7 @@
     ],
     "action": {
       "default_popup": "popup.html",
-      "default_icon": "image.png"
+      "default_icon": "bookmark.jpg"
     },
     "background": {
     "service_worker": "bookmarkscan.js"
