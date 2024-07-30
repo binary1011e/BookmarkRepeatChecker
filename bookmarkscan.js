@@ -1,9 +1,11 @@
 // Function for when a bookmark is created
+let found = false;
 function onBookmarkCreated(id, bookmark) {
     chrome.bookmarks.getTree((bookmarkTreeNodes) => {
         for (let node of bookmarkTreeNodes) {
             iterateBookmarks(node, bookmark);
         }
+        found = false;
     });    
 }
   
@@ -12,7 +14,7 @@ chrome.bookmarks.onCreated.addListener(onBookmarkCreated);
   
   // Function to recursively iterate through bookmarks (for reference)
 function iterateBookmarks(bookmarkNode, bookmark) {
-    
+    if (found) return;
   
     if (bookmarkNode.children) {
         for (let child of bookmarkNode.children) {
@@ -32,6 +34,7 @@ function iterateBookmarks(bookmarkNode, bookmark) {
                 message: "You created a bookmark to a website you already bookmarked!",
             });
             console.log(bookmarkNode.url.substring(0, url))
+            found = true;
         }
     }
 }
