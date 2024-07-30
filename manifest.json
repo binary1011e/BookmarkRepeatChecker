@@ -10,8 +10,15 @@
     ],
     "action": {
       "default_popup": "popup.html",
-      "default_icon": "bookmark.jpg"
+      "default_icon": "bookmark-28-16.png"
     },
+    "icons": {
+    "16":"bookmark-28-16.png",
+    "32": "bookmark-28-32.png",
+    "48": "bookmark-28-48.png",
+    "128": "bookmark-28-128.png"
+  },
+
     "background": {
     "service_worker": "bookmarkscan.js"
     }
