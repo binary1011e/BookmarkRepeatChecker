@@ -29,7 +29,7 @@ function iterateBookmarks(bookmarkNode, bookmark) {
             // Create notification
             chrome.notifications.create({
                 type: "basic",
-                iconUrl: chrome.runtime.getURL("Boo_Island_Tour.png"),
+                iconUrl: chrome.runtime.getURL("images/Boo_Island_Tour.png"),
                 title: "Hello Extensions",
                 message: "You created a bookmark to a website you already bookmarked!",
             });
